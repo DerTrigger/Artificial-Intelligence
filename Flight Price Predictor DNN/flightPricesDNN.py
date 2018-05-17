@@ -90,6 +90,7 @@ predict_input_func = tf.estimator.inputs.pandas_input_fn(x = X_test,
 pred_gen = model.predict(predict_input_func)
 X_test.head()
 predictions = list(pred_gen)
+final_preds = []
 for pred in predictions: 
     final_preds.append(pred['predictions'])
 from sklearn.metrics import mean_squared_error
